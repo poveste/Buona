@@ -35,3 +35,34 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# ✅ 추가 추천 항목들
+
+# 빌드 결과물
+android/
+ios/
+build/
+
+# IDE 및 개발 툴 설정
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# 테스트 커버리지 및 리포트
+coverage/
+*.lcov
+
+# 로그 파일
+*.log
+
+# 환경 파일 (기존 .env*.local 외에 일반 .env 포함)
+.env
+
+# Optional Expo or Metro files
+.expo-shared/
+
+# Watchman files (macOS/Watchman users)
+.watchmanconfig
