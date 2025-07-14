@@ -1,3 +1,4 @@
+// src/screens/LoginScreen.tsx
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -11,41 +12,39 @@ import {
   Pressable,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation/AppNavigator';
+
+// // LoginScreen에서 사용할 네비게이션 타입 지정
+type LoginScreenNavigationProp = NavigationProp<RootStackParamList, 'Login'>;
 
 export default function LoginScreen() {
-  const navigation = useNavigation();
+  // useNavigation에 타입 명시
+  const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // 로그인 버튼 눌렀을 때 무조건 홈으로 이동
   const onLoginPress = () => {
-    // 아이디, 비밀번호 입력 안 해도 상관없이 홈으로 이동
-    // TODO: 나중에 아이디/비밀번호 검증 로직을 여기에 추가하세요.
     navigation.navigate('Home');
   };
 
-  // 둘러보기 버튼 눌렀을 때 홈으로 이동
   const onExplorePress = () => {
     navigation.navigate('Home');
   };
 
   return (
+    // 이하 기존 코드 유지
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.select({ ios: 'padding', android: undefined })}
     >
       <StatusBar style="light" />
-
-      {/* 로고 */}
       <Image
         source={require('../../assets/buona-title.png')}
         style={styles.logo}
         resizeMode="contain"
       />
-
-      {/* 입력 박스 */}
       <View style={styles.inputBox}>
         <TextInput
           style={styles.input}
@@ -63,8 +62,6 @@ export default function LoginScreen() {
           value={password}
           onChangeText={setPassword}
         />
-
-        {/* 로그인 버튼 */}
         <Pressable
           onPress={onLoginPress}
           style={({ pressed }) => [
@@ -75,7 +72,6 @@ export default function LoginScreen() {
           <Text style={styles.buttonText}>로그인</Text>
         </Pressable>
 
-        {/* 링크들 */}
         <View style={styles.linksContainer}>
           <Text style={styles.linkText}>
             회원이 아니신가요?{' '}
@@ -96,7 +92,6 @@ export default function LoginScreen() {
         </View>
       </View>
 
-      {/* 둘러보기 버튼 */}
       <Pressable
         onPress={onExplorePress}
         style={({ pressed }) => [
