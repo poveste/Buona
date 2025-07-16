@@ -19,6 +19,11 @@
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.5",
+
+    "react-native-pager-view": "^6.8.1",
+    "react-native-paper": "^5.14.5",
+    "react-native-responsive-screen": "^1.4.2",
+    "react-native-tab-view": "^4.1.2",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
