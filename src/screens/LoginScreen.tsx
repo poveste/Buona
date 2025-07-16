@@ -26,11 +26,11 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
 
   const onLoginPress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Main');
   };
 
   const onExplorePress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Main');
   };
 
   return (
